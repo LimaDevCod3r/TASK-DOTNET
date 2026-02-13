@@ -1,0 +1,66 @@
+@TaskManager.Api_HostAddress = http://localhost:5226
+
+### Auth - Login (public)
+POST {{TaskManager.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "senha123"
+}
+
+### Auth - Validate Token
+POST {{TaskManager.Api_HostAddress}}/api/auth/validate
+Content-Type: application/json
+
+"seu-jwt-token-aqui"
+
+### User - Register (public)
+POST {{TaskManager.Api_HostAddress}}/api/user/register
+Content-Type: application/json
+
+{
+  "name": "João Silva",
+  "email": "joao@example.com",
+  "password": "senha123"
+}
+
+### User - Get All (requires Authorization)
+GET {{TaskManager.Api_HostAddress}}/api/user
+Authorization: Bearer {{token}}
+
+### User - Get By Id (requires Authorization - own profile only)
+GET {{TaskManager.Api_HostAddress}}/api/user/1
+Authorization: Bearer {{token}}
+
+### Task - Get All (requires Authorization)
+GET {{TaskManager.Api_HostAddress}}/api/task
+Authorization: Bearer {{token}}
+
+### Task - Get By Id (requires Authorization)
+GET {{TaskManager.Api_HostAddress}}/api/task/1
+Authorization: Bearer {{token}}
+
+### Task - Create (requires Authorization)
+POST {{TaskManager.Api_HostAddress}}/api/task
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Nova tarefa",
+  "description": "Descrição da tarefa"
+}
+
+### Task - Update (requires Authorization)
+PATCH {{TaskManager.Api_HostAddress}}/api/task/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Título atualizado",
+  "isCompleted": true
+}
+
+### Task - Delete (requires Authorization)
+DELETE {{TaskManager.Api_HostAddress}}/api/task/1
+Authorization: Bearer {{token}}

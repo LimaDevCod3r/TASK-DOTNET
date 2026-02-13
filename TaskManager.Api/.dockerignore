@@ -1,0 +1,9 @@
+bin/
+obj/
+.git/
+.idea/
+.cursor/
+appsettings.Development.json
+Dockerfile
+docker-compose.yml
+.dockerignore
