@@ -18,7 +18,7 @@ Para rodar o projeto completo (Frontend, API e Banco de Dados) sem precisar conf
 3. Aguarde o build e a inicialização.
 4. Acesse as aplicações:
    - **Frontend:** [http://localhost:3000](http://localhost:3000)
-   - **Backend (Swagger):** [http://localhost:5226/swagger](http://localhost:5226/swagger)
+   - **Backend (Swagger):** Falta implementar
 
 ---
 
